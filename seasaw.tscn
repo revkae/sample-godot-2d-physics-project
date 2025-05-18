@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://mltnekr4on22"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbiv1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruiba"]
+size = Vector2(174.375, 7.25)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pivot" type="StaticBody2D" parent="."]
+position = Vector2(0, 28)
+scale = Vector2(1, 2.44)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot"]
+shape = SubResource("RectangleShape2D_dbiv1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(10, 7)
+node_a = NodePath("../Pivot")
+node_b = NodePath("../RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_ruiba")

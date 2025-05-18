@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dgwhfaj8v7nb5"]
+
+[ext_resource type="Texture2D" uid="uid://dx0pwmvwkuxkf" path="res://icon.svg" id="1_0xm2m"]
+[ext_resource type="PackedScene" uid="uid://cf1ac67c0w3wu" path="res://player.tscn" id="2_h2yge"]
+[ext_resource type="PackedScene" uid="uid://mltnekr4on22" path="res://seasaw.tscn" id="3_h2yge"]
+[ext_resource type="PackedScene" uid="uid://cubwmytwy8gkb" path="res://jump_pad.tscn" id="4_1bvp3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1bvp3"]
+size = Vector2(591.5, 17)
+
+[node name="Main" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(278.25, 72.5)
+shape = SubResource("RectangleShape2D_1bvp3")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(278.5, 72.25)
+scale = Vector2(4.61719, 0.136719)
+texture = ExtResource("1_0xm2m")
+
+[node name="Player" parent="." instance=ExtResource("2_h2yge")]
+position = Vector2(169, 38)
+
+[node name="Node2D" parent="." instance=ExtResource("3_h2yge")]
+position = Vector2(333, 10)
+
+[node name="JumpPad" parent="." instance=ExtResource("4_1bvp3")]
+position = Vector2(70, 61)
+scale = Vector2(1.44617, 0.490255)
