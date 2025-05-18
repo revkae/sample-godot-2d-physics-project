@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://bl3hfqqjmu36"]
+
+[ext_resource type="Texture2D" uid="uid://bx6nbpptdctjc" path="res://Assets/Ui/ui_box.png" id="1_5j2cu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_5j2cu"]
+font_size = 161
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_5j2cu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 191.0
+offset_right = 903.0
+offset_bottom = 412.0
+text = "You won"
+label_settings = SubResource("LabelSettings_5j2cu")

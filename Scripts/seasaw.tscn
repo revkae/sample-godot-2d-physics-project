@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://mltnekr4on22"]
+
+[ext_resource type="Texture2D" uid="uid://b7njmlp1ywfve" path="res://Assets/Default/tile_roof.png" id="1_2h6u5"]
+[ext_resource type="Texture2D" uid="uid://bed2vyec4ub1o" path="res://Assets/Default/tile_border.png" id="1_6edjq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dbiv1"]
+size = Vector2(20, 34.5902)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ruiba"]
+size = Vector2(433.877, 7.25)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Pivot" type="StaticBody2D" parent="."]
+position = Vector2(0, 28)
+scale = Vector2(1, 2.44)
+
+[node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+position = Vector2(0, 8.25893)
+scale = Vector2(0.525043, 0.525043)
+texture = ExtResource("1_2h6u5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot"]
+position = Vector2(0, 7.29508)
+shape = SubResource("RectangleShape2D_dbiv1")
+
+[node name="PinJoint2D" type="PinJoint2D" parent="."]
+position = Vector2(10, 7)
+node_a = NodePath("../Pivot")
+node_b = NodePath("../RigidBody2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+rotation = -0.216123
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(70.7987, 5.41689)
+scale = Vector2(6.83241, -0.134649)
+texture = ExtResource("1_6edjq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(70.9387, 5)
+shape = SubResource("RectangleShape2D_ruiba")
