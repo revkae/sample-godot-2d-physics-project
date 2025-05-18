@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://mltnekr4on22"]
+[gd_scene load_steps=5 format=3 uid="uid://mltnekr4on22"]
+
+[ext_resource type="Texture2D" uid="uid://camnsscf7o1k3" path="res://PNG/Retina/tile_roof.png" id="1_kk7ai"]
+[ext_resource type="Texture2D" uid="uid://05j6jq4o6idf" path="res://PNG/Default/tile_belt.png" id="2_i5hn8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dbiv1"]
+size = Vector2(20, 34.5902)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ruiba"]
-size = Vector2(174.375, 7.25)
+size = Vector2(433.877, 7.25)
 
 [node name="Node2D" type="Node2D"]
 
@@ -12,8 +16,12 @@ position = Vector2(0, 28)
 scale = Vector2(1, 2.44)
 
 [node name="Sprite2D" type="Sprite2D" parent="Pivot"]
+position = Vector2(0, 8.60656)
+scale = Vector2(0.255635, 0.255635)
+texture = ExtResource("1_kk7ai")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot"]
+position = Vector2(0, 7.29508)
 shape = SubResource("RectangleShape2D_dbiv1")
 
 [node name="PinJoint2D" type="PinJoint2D" parent="."]
@@ -22,9 +30,13 @@ node_a = NodePath("../Pivot")
 node_b = NodePath("../RigidBody2D")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+rotation = -0.216123
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+position = Vector2(71.3503, -7.88269)
+scale = Vector2(6.86643, 0.671875)
+texture = ExtResource("2_i5hn8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(0, 5)
+position = Vector2(70.9387, 5)
 shape = SubResource("RectangleShape2D_ruiba")

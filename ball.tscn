@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://dpbp3bfpiiws5"]
+
+[ext_resource type="Texture2D" uid="uid://ckmrf6mbifsnp" path="res://PNG/Retina/item_shieldRound.png" id="1_x8fbi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_41u45"]
+
+[node name="Ball" type="Node2D"]
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+mass = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+scale = Vector2(3, 3)
+shape = SubResource("CircleShape2D_41u45")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+scale = Vector2(0.64, 0.64)
+texture = ExtResource("1_x8fbi")
